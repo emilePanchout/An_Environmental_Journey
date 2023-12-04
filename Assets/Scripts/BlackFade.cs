@@ -10,11 +10,14 @@ public class BlackFade : MonoBehaviour
     public GameObject blackOutSquare;
     public GameObject FireOnGround;
     public GameObject BurnedGround;
+    public GameObject Fog;
+    public GameObject Light;
 
     void Start()
     {
         FireOnGround.SetActive(false);
         BurnedGround.SetActive(false);
+        Fog.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,7 +39,14 @@ public class BlackFade : MonoBehaviour
         yield return new WaitForSeconds(1f);
         FireOnGround.SetActive(true);
         BurnedGround.SetActive(true);
+        Fog.SetActive(true);
+        Light.SetActive(false);
+
         FireOnGround.GetComponent<ParticleSystem>().Play();
+        Fog.GetComponent<ParticleSystem>().Play();
+
+        RenderSettings.skybox = null;
+        RenderSettings.skybox.SetColor("_Tint", Color.black);
     }
 
     public IEnumerator FadeBlackOut(bool fadeToBlack = true, int fadeSpeed = 5)
