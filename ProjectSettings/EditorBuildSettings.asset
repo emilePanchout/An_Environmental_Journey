@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Ocean.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9910688337e435d43917467f485ce2eb,
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 2b4c83e737183f546beba50f4b52bc89,
       type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 73fad6446ad46724fbaa0b5d321e8b13,
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: bc1883d3fe1381c49a65c34b2ac4f60f,
       type: 2}
