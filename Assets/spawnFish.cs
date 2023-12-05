@@ -11,8 +11,8 @@ public class spawnFish : MonoBehaviour
     public int minHeight;
     public int maxHeight;
     public float spawnRadius = 10f;
-    public float minSpeed = 2f;
-    public float maxSpeed = 5f;
+    public float minSpeed = 1f;
+    public float maxSpeed = 10f;
 
     // Start is called before the first frame update
     void Start()
