@@ -6,7 +6,6 @@ using UnityEngine.InputSystem.LowLevel;
 public class spawnFish : MonoBehaviour
 {
     public List<GameObject> fishList;
-    public GameObject sharkPrefab;
     public int minObjects;
     public int maxObjects;
     public int minHeight;
@@ -33,24 +32,16 @@ public class spawnFish : MonoBehaviour
         {
             GameObject fishToSpawn = fishList[Random.Range(0, fishList.Count)];
             Vector3 randomPos = getRandomPos();
+
             GameObject thisFish = Instantiate(fishToSpawn, randomPos, Quaternion.identity);
 
-            if (!thisFish.name.Equals("SharkV1(Clone)"))
-            {
-                thisFish.layer = LayerMask.NameToLayer("Eatable");
-            }
+            thisFish.layer = LayerMask.NameToLayer("Eatable");
 
         }
     }
 
     Vector3 getRandomPos()
     {
-        //float angle = Random.Range(0f, 360f);
-        //Vector3 randomDirection = Quaternion.Euler(0, angle, 0) * Vector3.forward;
-        //float randomHeight = Random.Range(minHeight, maxHeight);
-
-        //Vector3 randomPosition = transform.position + randomDirection * Random.Range(0f, spawnRadius);
-
         float randomX = Random.Range(-100, 100);
         float randomZ = Random.Range(-100, 100);
         float randomHeight = Random.Range(minHeight, maxHeight);
