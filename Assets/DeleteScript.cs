@@ -1,14 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
-using UnityEngine.XR;
 
 public class DeleteScript : MonoBehaviour
 {
     public InputActionReference deleteRef;
-    playerHealth pH;
-    public TMP_Text healthText;
     //private AudioManager audioManager;
 
     private void Start()
@@ -33,43 +29,15 @@ public class DeleteScript : MonoBehaviour
             {
                 Destroy(hit.collider.gameObject);
 
-                if (playerHealth.currentHealth < 91)
-                {
-                    playerHealth.currentHealth += 10;
-                    UpdateHealthText();
-                }
-                else
-                {
-                    playerHealth.currentHealth = 100;
-                    UpdateHealthText();
-                }
+                // updateHealth
 
             }
             else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Trash"))
             {
                 Destroy(hit.collider.gameObject);
-                if (playerHealth.currentHealth > 10)
-                {
-                    playerHealth.currentHealth -= 10;
-                    UpdateHealthText();
-                }
-                else
-                {
-                    playerHealth.currentHealth = 0;
-                    UpdateHealthText();
-                }
+                // updateHealth
 
             }
-        }
-    }
-
-    public void UpdateHealthText()
-    {
-        healthText.text = "Santé: " + playerHealth.currentHealth;
-        if (playerHealth.currentHealth == 0)
-        {
-            healthText.text = "Votre vie aquatique virtuelle s'est éteinte en rasion de la pollution plastique. " +
-                "La réalité est tout aussi grave. Agissons ensemble pour préserver nos océans et protéger la diversité marine!";
         }
     }
 

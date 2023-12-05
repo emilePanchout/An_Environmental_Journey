@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1606a5269e19d41b3061536b4c1b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 2057022131}
 --- !u!1 &1039855656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,7 +1185,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deleteRef: {fileID: -5568202526806135904, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
-  healthText: {fileID: 2057022131}
 --- !u!1 &1389335962
 GameObject:
   m_ObjectHideFlags: 0
