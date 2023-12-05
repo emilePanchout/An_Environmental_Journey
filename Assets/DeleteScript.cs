@@ -7,8 +7,8 @@ using UnityEngine.XR;
 public class DeleteScript : MonoBehaviour
 {
     public InputActionReference deleteRef;
+    playerHealth pH;
     public TMP_Text healthText;
-    private int health = 100;
     //private AudioManager audioManager;
 
     private void Start()
@@ -32,16 +32,15 @@ public class DeleteScript : MonoBehaviour
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Eatable"))
             {
                 Destroy(hit.collider.gameObject);
-                Debug.Log("Food Hit");
 
-                if (health < 91)
+                if (playerHealth.currentHealth < 91)
                 {
-                    health += 10;
+                    playerHealth.currentHealth += 10;
                     UpdateHealthText();
                 }
                 else
                 {
-                    health = 100;
+                    playerHealth.currentHealth = 100;
                     UpdateHealthText();
                 }
 
@@ -49,15 +48,14 @@ public class DeleteScript : MonoBehaviour
             else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Trash"))
             {
                 Destroy(hit.collider.gameObject);
-                Debug.Log("Trash Hit");
-                if (health > 10)
+                if (playerHealth.currentHealth > 10)
                 {
-                    health -= 10;
+                    playerHealth.currentHealth -= 10;
                     UpdateHealthText();
                 }
                 else
                 {
-                    health = 0;
+                    playerHealth.currentHealth = 0;
                     UpdateHealthText();
                 }
 
@@ -65,20 +63,14 @@ public class DeleteScript : MonoBehaviour
         }
     }
 
-    void UpdateHealthText()
+    public void UpdateHealthText()
     {
-        healthText.text = "Santé: " + health;
-        if (health == 0)
+        healthText.text = "Santé: " + playerHealth.currentHealth;
+        if (playerHealth.currentHealth == 0)
         {
             healthText.text = "Votre vie aquatique virtuelle s'est éteinte en rasion de la pollution plastique. " +
                 "La réalité est tout aussi grave. Agissons ensemble pour préserver nos océans et protéger la diversité marine!";
-            //gameOver();
-            // doesn't work --- XRDevice.DisableAutoXRCameraTracking(Camera.main, true);
         }
     }
 
-   /* void gameOver()
-    {
-
-    } */
 }
