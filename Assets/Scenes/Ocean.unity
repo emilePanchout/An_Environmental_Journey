@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc381a559195f6648990296909a0c431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharkModel: {fileID: 305885733672594492, guid: a3104cf6199f5144f80732cc270c1686,
+  sharkModel: {fileID: 9058624610773812738, guid: a3104cf6199f5144f80732cc270c1686,
     type: 3}
   minSharks: 100
   maxSharks: 100
@@ -3516,14 +3516,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishList:
-  - {fileID: 3188701901985541593, guid: fcd3e014dd927404d80d7de76321bb9e, type: 3}
-  - {fileID: 6773125978120899420, guid: f8dd8f367c150a44e81058510777d193, type: 3}
-  - {fileID: 1052788345360222886, guid: 0000887612ab53c4585b18540433e333, type: 3}
+  - {fileID: 4839081604665270438, guid: fcd3e014dd927404d80d7de76321bb9e, type: 3}
+  - {fileID: 2268731103244944113, guid: f8dd8f367c150a44e81058510777d193, type: 3}
+  - {fileID: 2849884698805746993, guid: 0000887612ab53c4585b18540433e333, type: 3}
+  - {fileID: 1931256913244392093, guid: 4d41df95b806f7a43981ef283d349f9e, type: 3}
   minObjects: 10000
   maxObjects: 10000
   minHeight: -30
   maxHeight: 30
   spawnRadius: 30
+  minSpeed: 2
+  maxSpeed: 5
 --- !u!4 &2078256641
 Transform:
   m_ObjectHideFlags: 0

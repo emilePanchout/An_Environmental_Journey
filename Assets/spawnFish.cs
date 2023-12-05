@@ -11,6 +11,8 @@ public class spawnFish : MonoBehaviour
     public int minHeight;
     public int maxHeight;
     public float spawnRadius = 10f;
+    public float minSpeed = 2f;
+    public float maxSpeed = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +37,15 @@ public class spawnFish : MonoBehaviour
 
             GameObject thisFish = Instantiate(fishToSpawn, randomPos, Quaternion.identity);
 
+            Vector3 randomDirection = Random.insideUnitSphere;
+
+            float randomSpeed = Random.Range(minSpeed, maxSpeed);
+
+            FishMoves fishMoves = thisFish.AddComponent<FishMoves>();
+            fishMoves.setMovementParameters(randomDirection, randomSpeed);
+
             thisFish.layer = LayerMask.NameToLayer("Eatable");
+            thisFish.tag = "Fish";
 
         }
     }
