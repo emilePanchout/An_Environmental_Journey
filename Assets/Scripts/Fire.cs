@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
+    public List<GameObject> ensemble;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,21 +13,22 @@ public class Fire : MonoBehaviour
 
     private void Burning()
     {
-        int number = Random.Range(1, 7);
-
-        GameObject ensemble = gameObject.transform.Find("Ensemble1").gameObject;
-
-        GameObject set = ensemble.transform.Find("Set" + number).gameObject;
-
-        foreach (Transform child in set.transform)
+        foreach (GameObject forest in ensemble)
         {
-            if (child.gameObject.activeSelf && child.tag == "Burn")
+            int number = Random.Range(1, 7);
+
+            GameObject set = forest.transform.Find("Set" + number).gameObject;
+
+            foreach (Transform child in set.transform)
             {
-                StartCoroutine(Burned(child));
-            }
-            if(child.gameObject.name == "Particules")
-            {
-                child.GetComponent<ParticleSystem>().Play();
+                if (child.gameObject.activeSelf && child.tag == "Burn")
+                {
+                    StartCoroutine(Burned(child));
+                }
+                if (child.gameObject.name == "Particules")
+                {
+                    child.GetComponent<ParticleSystem>().Play();
+                }
             }
         }
     }

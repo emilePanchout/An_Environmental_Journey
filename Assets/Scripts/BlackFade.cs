@@ -7,11 +7,12 @@ public class BlackFade : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject blackOutSquare;
     public GameObject FireOnGround;
     public GameObject BurnedGround;
     public GameObject Fog;
     public GameObject Light;
+
+    public Material blackOutSquare;
 
     void Start()
     {
@@ -51,30 +52,30 @@ public class BlackFade : MonoBehaviour
 
     public IEnumerator FadeBlackOut(bool fadeToBlack = true, int fadeSpeed = 5)
     {
-        Color objectColor = blackOutSquare.GetComponent<Image>().color;
+        Color objectColor = blackOutSquare.color;
         float fadeAmount;
 
         Debug.Log(fadeToBlack);
 
         if (fadeToBlack)
         {
-            while(blackOutSquare.GetComponent<Image>().color.a < 1)
+            while(blackOutSquare.color.a < 1)
             {
                 fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
 
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                blackOutSquare.GetComponent<Image>().color = objectColor;
+                blackOutSquare.color = objectColor;
                 yield return null;
             }
         }
         else
         {
-            while (blackOutSquare.GetComponent<Image>().color.a > 0)
+            while (blackOutSquare.color.a > 0)
             {
                 fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
 
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                blackOutSquare.GetComponent<Image>().color = objectColor;
+                blackOutSquare.color = objectColor;
                 yield return null;
             }
         }
