@@ -47,7 +47,8 @@ public class BlackFade : MonoBehaviour
         Fog.GetComponent<ParticleSystem>().Play();
 
         RenderSettings.skybox = null;
-        RenderSettings.skybox.SetColor("_Tint", Color.black);
+        //RenderSettings.skybox.SetColor("_Tint", Color.black);
+        RenderSettings.skybox = blackOutSquare;
     }
 
     public IEnumerator FadeBlackOut(bool fadeToBlack = true, int fadeSpeed = 5)

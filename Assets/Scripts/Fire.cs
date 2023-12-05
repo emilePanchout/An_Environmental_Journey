@@ -5,10 +5,14 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     public List<GameObject> ensemble;
-    // Start is called before the first frame update
-    void Start()
+    private List<Transform> particules = new();
+
+    public void Update()
     {
-        InvokeRepeating("Burning", 1f, 1f);  //1s delay, repeat every 1s
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            InvokeRepeating("Burning", 2f, 2f);  //1s delay, repeat every 1s
+        }
     }
 
     private void Burning()
@@ -25,9 +29,10 @@ public class Fire : MonoBehaviour
                 {
                     StartCoroutine(Burned(child));
                 }
-                if (child.gameObject.name == "Particules")
+                if (child.gameObject.name == "Particules" && !particules.Contains(child))
                 {
                     child.GetComponent<ParticleSystem>().Play();
+                    particules.Add(child);
                 }
             }
         }

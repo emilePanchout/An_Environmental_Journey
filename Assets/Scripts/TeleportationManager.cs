@@ -69,6 +69,7 @@ public class TeleportationManager : MonoBehaviour
         {
 
             var interactable = hit.collider.GetComponentInParent<BaseTeleportationInteractable>();
+            Debug.Log(hit.collider.name);
             var t = interactable.GetAttachTransform(teleportRay);
 
             TeleportRequest tpRequest = new TeleportRequest()
