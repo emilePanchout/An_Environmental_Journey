@@ -1439,6 +1439,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Pickup",
+                    "type": "Button",
+                    "id": "e966c507-7215-4fbc-ba7a-33e599f61a06",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1582,6 +1591,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "UI Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29224320-d030-4e58-93f9-a5fe70abf216",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pickup",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

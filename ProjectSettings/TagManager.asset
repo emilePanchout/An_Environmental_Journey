@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerController
   - Burn
+  - Animal
   layers:
   - Default
   - TransparentFX
