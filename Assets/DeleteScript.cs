@@ -5,6 +5,7 @@ using TMPro;
 public class DeleteScript : MonoBehaviour
 {
     public InputActionReference deleteRef;
+    public playerHealth pH;
     //private AudioManager audioManager;
 
     private void Start()
@@ -29,13 +30,14 @@ public class DeleteScript : MonoBehaviour
             {
                 Destroy(hit.collider.gameObject);
 
-                // updateHealth
+                pH.onEat("Eatable");
 
             }
             else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Trash"))
             {
                 Destroy(hit.collider.gameObject);
-                // updateHealth
+
+                pH.onEat("Trash");
 
             }
         }
