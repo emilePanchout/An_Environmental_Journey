@@ -32,6 +32,8 @@ public class DeleteScript : MonoBehaviour
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Eatable"))
             {
                 Destroy(hit.collider.gameObject);
+                Debug.Log("Food Hit");
+
                 if (health < 91)
                 {
                     health += 10;
@@ -47,6 +49,7 @@ public class DeleteScript : MonoBehaviour
             else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Trash"))
             {
                 Destroy(hit.collider.gameObject);
+                Debug.Log("Trash Hit");
                 if (health > 10)
                 {
                     health -= 10;
