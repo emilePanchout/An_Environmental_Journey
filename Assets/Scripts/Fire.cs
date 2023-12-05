@@ -7,13 +7,19 @@ public class Fire : MonoBehaviour
     public List<GameObject> ensemble;
     private List<Transform> particules = new();
 
+    public BlackFade blackfade;
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
+            StartCoroutine(blackfade.StartChange());
+
             InvokeRepeating("Burning", 2f, 2f);  //1s delay, repeat every 1s
         }
     }
+
+
 
     private void Burning()
     {

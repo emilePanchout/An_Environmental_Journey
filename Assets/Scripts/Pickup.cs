@@ -10,6 +10,8 @@ public class Pickup : MonoBehaviour
 
     public TMP_Text animalSaved;
 
+    public AudioSource picksound;
+
     private int i = 1;
 
     private void Update()
@@ -31,6 +33,7 @@ public class Pickup : MonoBehaviour
                 hit.collider.gameObject.SetActive(false);
                 animalSaved.text = "Saved : " + i;
                 i++;
+                picksound.Play();
             }
         }
     }

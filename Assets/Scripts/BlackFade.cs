@@ -13,26 +13,17 @@ public class BlackFade : MonoBehaviour
     public GameObject Light;
 
     public Material blackOutSquare;
+    public Material Black;
+
+    public AudioSource Forest;
+    public AudioSource FireStart;
+    public AudioSource BreathPlayer;
 
     void Start()
     {
         FireOnGround.SetActive(false);
         BurnedGround.SetActive(false);
         Fog.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            StartCoroutine(FadeBlackOut());
-            StartCoroutine(ChangeScene());
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            StartCoroutine(FadeBlackOut(false));
-        }
     }
 
     public IEnumerator ChangeScene()
@@ -80,5 +71,28 @@ public class BlackFade : MonoBehaviour
                 yield return null;
             }
         }
+    }
+
+    public IEnumerator StartChange()
+    {
+        yield return new WaitForSeconds(4);
+        StartCoroutine(FadeBlackOut());
+        StartCoroutine(ChangeScene());
+        StartCoroutine(EndChange());
+
+        Forest.Stop();
+        FireStart.Play();
+        InvokeRepeating("Breath", 2f, 10f);  //1s delay, repeat every 1s
+    }
+
+    public IEnumerator EndChange()
+    {
+        yield return new WaitForSeconds(3);
+        StartCoroutine(FadeBlackOut(false));
+    }
+
+    public void Breath()
+    {
+        BreathPlayer.Play();
     }
 }
