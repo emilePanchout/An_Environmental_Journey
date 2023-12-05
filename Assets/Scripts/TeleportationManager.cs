@@ -34,6 +34,7 @@ public class TeleportationManager : MonoBehaviour
         activate.action.performed += OnTeleportActivate; // thumbstick pressed
         activate.action.canceled += OnTeleportRequested; // = thumbstick released
 
+
         cancel.action.Enable();
         cancel.action.performed += OnTeleportCancel;
 
@@ -46,6 +47,7 @@ public class TeleportationManager : MonoBehaviour
             Debug.LogError("Error : " + e.Message);
         }
     }
+
 
 
     private void OnTeleportRequested(InputAction.CallbackContext context)
