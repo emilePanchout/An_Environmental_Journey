@@ -33,4 +33,5 @@ public class CatchManager : MonoBehaviour
             other.transform.SetParent(bearSlot.transform, false);
         }
     }
+
 }
