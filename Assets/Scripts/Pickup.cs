@@ -36,7 +36,8 @@ public class Pickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Animal")
         {
-            other.gameObject.GetComponent<Highlight>()?.ToggleHighlight(true);
+            //other.gameObject.GetComponent<Highlight>()?.ToggleHighlight(true);
+            other.gameObject.GetComponent<Outline>().enabled = true;
             if (pickup.action.triggered)
             {
                 Pick(other.gameObject);
@@ -49,7 +50,9 @@ public class Pickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Animal")
         {
-            other.gameObject.GetComponent<Highlight>()?.ToggleHighlight(true);
+            //other.gameObject.GetComponent<Highlight>()?.ToggleHighlight(true);
+            other.gameObject.GetComponent<Outline>().enabled = false;
+
         }
     }
     //public void Pick(RaycastHit hit)
