@@ -14,28 +14,58 @@ public class Pickup : MonoBehaviour
 
     private int i = 1;
 
-    private void Update()
+    //private void Update()
+    //{
+    //    RaycastHit hit;
+
+    //    if (Physics.Raycast(transform.position, transform.forward, out hit))
+    //    {
+    //        if (hit.collider.tag == "Animal")
+    //        {
+    //            Debug.Log("hit animal");
+    //            hit.collider.GetComponent<Highlight>()?.ToggleHighlight(true);
+    //            if (pickup.action.triggered)
+    //            {
+    //                Pick(hit);
+    //            }
+
+    //        }
+    //    }
+    //}
+    private void OnTriggerEnter(Collider other)
     {
-        if (pickup.action.triggered)
+        if (other.gameObject.tag == "Animal")
         {
-            Pick();
+            other.gameObject.GetComponent<Highlight>()?.ToggleHighlight(true);
+            if (pickup.action.triggered)
+            {
+                Pick(other.gameObject);
+            }
+
         }
     }
 
-    public void Pick()
+    private void OnTriggerExit(Collider other)
     {
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        if (other.gameObject.tag == "Animal")
         {
-            if (hit.collider.tag == "Animal")
-            {
-                hit.collider.gameObject.SetActive(false);
-                animalSaved.text = "Saved : " + i;
-                i++;
-                picksound.Play();
-            }
+            other.gameObject.GetComponent<Highlight>()?.ToggleHighlight(true);
         }
+    }
+    //public void Pick(RaycastHit hit)
+    //{
+    //    hit.collider.gameObject.SetActive(false);
+    //    animalSaved.text = "Saved : " + i;
+    //    i++;
+    //    picksound.Play();
+    //}
+
+    public void Pick(GameObject hit)
+    {
+        hit.SetActive(false);
+        animalSaved.text = "saved : " + i;
+        i++;
+        picksound.Play();
     }
 
 
