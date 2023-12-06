@@ -2293,16 +2293,7 @@
             "id": "e6653b7d-a29a-4351-867e-0a576fae5c7d",
             "actions": [
                 {
-                    "name": "FireStarter",
-                    "type": "Button",
-                    "id": "5abff686-bac0-4bea-b4b2-04547f29ff8a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "CamSwitch",
+                    "name": "ShowMap",
                     "type": "Button",
                     "id": "796c2a63-53f7-4c4c-b846-a5850175d107",
                     "expectedControlType": "Button",
@@ -2332,23 +2323,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "33e907be-edb3-4736-90ab-86c955e39e65",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "FireStarter",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2d21bd0e-2739-4c30-a0b5-7ce04c3ddc8b",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "CamSwitch",
+                    "action": "ShowMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -6,9 +6,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CatchManager : MonoBehaviour
 {
+    public bool playerHasBear = false;
+
     public Collider handCollider;
+    public GameObject leftHand;
+
     public InputActionReference select;
     public GameObject bearSlot;
+
 
     // Update is called once per frame
     void Start()
@@ -25,12 +30,16 @@ public class CatchManager : MonoBehaviour
     {
         handCollider.enabled = false;
     }
+
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Touching bear");
         if (other.gameObject.CompareTag("Bear"))
         {
             other.transform.SetParent(bearSlot.transform, false);
+            playerHasBear = true;
+            leftHand.SetActive(false);
         }
     }
 
