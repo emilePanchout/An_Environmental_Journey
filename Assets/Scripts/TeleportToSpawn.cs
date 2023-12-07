@@ -7,8 +7,11 @@ public class TeleportToSpawn : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
-        other.gameObject.transform.position = Vector3.zero;
+        if (other.CompareTag("Player"))
+        {
+            other.gameObject.transform.position = Vector3.zero;
+        }
+
     }
 
 }

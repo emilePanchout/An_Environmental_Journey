@@ -34,7 +34,6 @@ public class CatchManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Touching bear");
         if (other.gameObject.CompareTag("Bear"))
         {
             other.transform.SetParent(bearSlot.transform, false);

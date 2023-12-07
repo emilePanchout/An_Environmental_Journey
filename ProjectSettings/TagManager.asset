@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerController
   - Bear
+  - ParticleCollider
   layers:
   - Default
   - TransparentFX
