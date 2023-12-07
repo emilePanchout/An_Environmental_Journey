@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.11890004, g: 0.31090894, b: 0.35299024, a: 1}
+  m_IndirectSpecularColor: {r: 0.11890097, g: 0.3109121, b: 0.352994, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -154,10 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sharkModel: {fileID: 9058624610773812738, guid: a3104cf6199f5144f80732cc270c1686,
     type: 3}
-  minSharks: 100
-  maxSharks: 100
-  minHeight: -50
-  maxHeight: 50
+  minSharks: 20
+  maxSharks: 40
+  minHeight: -30
+  maxHeight: 30
   spawnRadius: 30
   minSpeed: 1
   maxSpeed: 3
@@ -560,7 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 2057022131}
   lowHealth: {fileID: 986866702}
-  decreaseSpeed: 0.2
+  decreaseSpeed: 0.5
 --- !u!82 &986866702
 AudioSource:
   m_ObjectHideFlags: 0
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LineWidth: 0.005
   m_OverrideInteractorLineLength: 1
-  m_LineLength: 10
+  m_LineLength: 30
   m_AutoAdjustLineLength: 0
   m_MinLineLength: 0.5
   m_UseDistanceToHitAsMaxLineLength: 1
@@ -1460,7 +1460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Timeout: 10
-  m_XROrigin: {fileID: 0}
+  m_XROrigin: {fileID: 1858970080}
 --- !u!114 &1389335964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3753,14 +3753,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashList:
-  - {fileID: 2262475008349304127, guid: d1c2d7236d71e96478aef2c34a591b8a, type: 3}
-  - {fileID: 2854175175764842802, guid: 410c92494855bec47a8b3ed3d0ddc421, type: 3}
-  - {fileID: 2147176074408296526, guid: 648876b6bec00ec4194b16a1ff2fec60, type: 3}
-  - {fileID: 2656795335769242978, guid: cb4c76c6c1729334f8132cee05ed5ad4, type: 3}
-  - {fileID: 6939963545855504970, guid: 49d88ccfe0ff387459c5dadf71c09bf8, type: 3}
-  - {fileID: 2268052834015080706, guid: 713a1b3ca865e37488767a5ea5f25cc0, type: 3}
-  - {fileID: 1260147356853538539, guid: b4638f30fa7db514694f377cb27297b0, type: 3}
   - {fileID: 2739884174891319556, guid: 3478055cc2741034290b944c096b80a6, type: 3}
+  - {fileID: 2262475008349304127, guid: d1c2d7236d71e96478aef2c34a591b8a, type: 3}
+  - {fileID: 2147176074408296526, guid: 648876b6bec00ec4194b16a1ff2fec60, type: 3}
+  - {fileID: 100000, guid: eef823a0d743d8942b54d878cc992b37, type: 3}
+  - {fileID: 6939963545855504970, guid: 49d88ccfe0ff387459c5dadf71c09bf8, type: 3}
+  - {fileID: 2850277569261269843, guid: 6e2bf3ce89e490a41b3fb40bff11d3b3, type: 3}
+  - {fileID: 4426478702190883949, guid: fdf139fab8cd8664a9032d175ff5ee01, type: 3}
+  - {fileID: 4058339509022653932, guid: d85299a760682cc419218369039661c3, type: 3}
   objectCount: 200
   minHeight: -30
   maxHeight: 30
@@ -3814,11 +3814,11 @@ MonoBehaviour:
   - {fileID: 2268731103244944113, guid: f8dd8f367c150a44e81058510777d193, type: 3}
   - {fileID: 2849884698805746993, guid: 0000887612ab53c4585b18540433e333, type: 3}
   - {fileID: 1931256913244392093, guid: 4d41df95b806f7a43981ef283d349f9e, type: 3}
-  minObjects: 10000
-  maxObjects: 10000
-  minHeight: -30
-  maxHeight: 30
-  spawnRadius: 30
+  minObjects: 1000
+  maxObjects: 3000
+  minHeight: -15
+  maxHeight: 15
+  spawnRadius: 15
   minSpeed: 2
   maxSpeed: 5
 --- !u!4 &2078256641
