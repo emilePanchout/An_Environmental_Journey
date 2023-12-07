@@ -23,12 +23,40 @@ public class spawnFish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            spawnFishRandomOnClick();
+            Debug.Log("Click 1");
+        }
     }
 
     void spawnFishRandom()
     {
         int objectCount = Random.Range(minObjects, maxObjects + 1);
+
+        for (int i = 0; i < objectCount; i++)
+        {
+            GameObject fishToSpawn = fishList[Random.Range(0, fishList.Count)];
+            Vector3 randomPos = getRandomPos();
+
+            GameObject thisFish = Instantiate(fishToSpawn, randomPos, Quaternion.identity);
+
+            Vector3 randomDirection = Random.insideUnitSphere;
+
+            float randomSpeed = Random.Range(minSpeed, maxSpeed);
+
+            FishMoves fishMoves = thisFish.AddComponent<FishMoves>();
+            fishMoves.setMovementParameters(randomDirection, randomSpeed);
+
+            thisFish.layer = LayerMask.NameToLayer("Eatable");
+            thisFish.tag = "Fish";
+
+        }
+    }
+
+    void spawnFishRandomOnClick()
+    {
+        int objectCount = 25;
 
         for (int i = 0; i < objectCount; i++)
         {

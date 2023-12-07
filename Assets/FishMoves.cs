@@ -12,7 +12,6 @@ public class FishMoves : MonoBehaviour
     {
         movementDirection = direction.normalized;
         speed = fishSpeed;
-        transform.forward = movementDirection * 180;
     }
     // Start is called before the first frame update
     void Start()
