@@ -17,7 +17,7 @@ public class AnimationAnimal : MonoBehaviour
         }
         if (gameObject.name == "Pudu")
         {
-            gameObject.GetComponent<Animator>().Play("Run");
+            gameObject.GetComponent<Animator>().Play("Walk");
         }
         Offset = new Vector2(transform.position.x - 1, transform.position.x + 1);
     }

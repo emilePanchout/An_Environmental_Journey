@@ -24,6 +24,7 @@ public class BlackFade : MonoBehaviour
         FireOnGround.SetActive(false);
         BurnedGround.SetActive(false);
         Fog.SetActive(false);
+        blackOutSquare.color = new Color(blackOutSquare.color.r, blackOutSquare.color.g, blackOutSquare.color.b, 0);
     }
 
     public IEnumerator ChangeScene()

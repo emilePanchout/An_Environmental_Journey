@@ -36,6 +36,7 @@ public class Pickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Animal")
         {
+            Debug.Log(other.gameObject.name);
             //other.gameObject.GetComponent<Highlight>()?.ToggleHighlight(true);
             other.gameObject.GetComponent<Outline>().enabled = true;
         }
