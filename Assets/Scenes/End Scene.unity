@@ -552,7 +552,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168950239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 652.5}
+  m_LocalPosition: {x: 0, y: 0, z: 655}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -607,7 +607,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1168950242}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1808069844}
+        m_TargetAssemblyTypeName: TextNav, Assembly-CSharp
+        m_MethodName: ShowNextText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1168950242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,6 +836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 784290583157987771, guid: 5d791e542fd50c44a972eecd0b8b98ac,
         type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 1642921524}
+    - target: {fileID: 784290583157987771, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
       propertyPath: m_MaxRaycastDistance
       value: 500
       objectReference: {fileID: 0}
@@ -854,13 +871,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6177204332533396218, guid: 5d791e542fd50c44a972eecd0b8b98ac,
         type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 1642921524}
+    - target: {fileID: 6177204332533396218, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
       propertyPath: m_MaxRaycastDistance
-      value: 3000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6177204332533396218, guid: 5d791e542fd50c44a972eecd0b8b98ac,
         type: 3}
       propertyPath: m_RaycastMask.m_Bits
       value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6177204332533396218, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6177204332533396218, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6177204332533396218, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1108,7 +1145,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732582713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 655.6002}
+  m_LocalPosition: {x: 0, y: 0, z: 655}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1163,7 +1200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1732582716}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1808069844}
+        m_TargetAssemblyTypeName: TextNav, Assembly-CSharp
+        m_MethodName: ShowPreviousText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1732582716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1304,6 +1353,7 @@ GameObject:
   - component: {fileID: 1808069840}
   - component: {fileID: 1808069839}
   - component: {fileID: 1808069843}
+  - component: {fileID: 1808069844}
   m_Layer: 5
   m_Name: InfoCanvas
   m_TagString: Untagged
@@ -1421,6 +1471,23 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1808069844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808069838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c331d9efdde06439af2eb40454101c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoText: {fileID: 187569297}
+  texts:
+  - Text 1
+  - Text 2
+  - Text 3
 --- !u!1 &1949979049
 GameObject:
   m_ObjectHideFlags: 0
