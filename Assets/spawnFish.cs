@@ -25,6 +25,7 @@ public class spawnFish : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            spawnRadius = 3;
             spawnFishRandomOnClick();
             Debug.Log("Click 1");
         }
