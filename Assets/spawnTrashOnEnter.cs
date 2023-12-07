@@ -9,6 +9,7 @@ public class spawnTrashOnEnter : MonoBehaviour
     public int objectCount;
     public int minHeight;
     public int maxHeight;
+    public int trashSpawnCount;
     public float spawnRadius = 10f;
 
     // Start is called before the first frame update
@@ -24,7 +25,11 @@ public class spawnTrashOnEnter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            spawnTrashRandom();
+            if (trashSpawnCount > 0)
+            {
+                spawnTrashRandom();
+                trashSpawnCount--;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Backspace))
@@ -36,7 +41,7 @@ public class spawnTrashOnEnter : MonoBehaviour
 
     void spawnTrashRandom()
     {
-        for (int i = 0; i < objectCount; i++)
+        for (int i = 0; i < 50; i++)
         {
             GameObject trashToSpawn = trashList[Random.Range(0, trashList.Count)];
             Vector3 randomPos = getRandomPos();

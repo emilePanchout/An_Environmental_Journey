@@ -159,8 +159,8 @@ MonoBehaviour:
   minHeight: 0
   maxHeight: 30
   spawnRadius: 30
-  minSpeed: 1
-  maxSpeed: 3
+  minSpeed: 0.5
+  maxSpeed: 2.5
 --- !u!4 &396127629
 Transform:
   m_ObjectHideFlags: 0
@@ -3807,6 +3807,7 @@ MonoBehaviour:
   objectCount: 200
   minHeight: -3
   maxHeight: 30
+  trashSpawnCount: 50
   spawnRadius: 30
 --- !u!4 &2072821939
 Transform:
@@ -3857,13 +3858,13 @@ MonoBehaviour:
   - {fileID: 2268731103244944113, guid: f8dd8f367c150a44e81058510777d193, type: 3}
   - {fileID: 2849884698805746993, guid: 0000887612ab53c4585b18540433e333, type: 3}
   - {fileID: 1931256913244392093, guid: 4d41df95b806f7a43981ef283d349f9e, type: 3}
-  minObjects: 1000
+  minObjects: 2000
   maxObjects: 3000
   minHeight: 0
   maxHeight: 15
   spawnRadius: 15
-  minSpeed: 2
-  maxSpeed: 5
+  minSpeed: 0.5
+  maxSpeed: 3.5
 --- !u!4 &2078256641
 Transform:
   m_ObjectHideFlags: 0
