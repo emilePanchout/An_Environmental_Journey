@@ -10,6 +10,7 @@ public class playerHealth : MonoBehaviour
     public static float currentHealth = 100f;
     public TMP_Text healthText;
     public AudioSource lowHealth;
+    public float decreaseSpeed;
 
     [SerializeField]
     private readonly DeleteScript deleteScript;
@@ -23,7 +24,7 @@ public class playerHealth : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && !healthDisplayed) {
-            InvokeRepeating("DecreaseHealth", 0f, 1f);
+            InvokeRepeating("DecreaseHealth", 0f, decreaseSpeed);
 
             healthDisplayed = true;
             UpdateHealthText();
