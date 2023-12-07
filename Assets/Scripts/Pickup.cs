@@ -38,11 +38,17 @@ public class Pickup : MonoBehaviour
         {
             //other.gameObject.GetComponent<Highlight>()?.ToggleHighlight(true);
             other.gameObject.GetComponent<Outline>().enabled = true;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Animal")
+        {
             if (pickup.action.triggered)
             {
                 Pick(other.gameObject);
             }
-
         }
     }
 
@@ -63,10 +69,10 @@ public class Pickup : MonoBehaviour
     //    picksound.Play();
     //}
 
-    public void Pick(GameObject hit)
+    public void Pick(GameObject animal)
     {
-        hit.SetActive(false);
-        animalSaved.text = "saved : " + i;
+        animal.SetActive(false);
+        animalSaved.text = "Saved : " + i;
         i++;
         picksound.Play();
     }

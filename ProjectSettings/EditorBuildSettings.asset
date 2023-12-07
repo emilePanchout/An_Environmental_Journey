@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: fb3ccea30c050234a99967b4680101a9
+  - enabled: 1
+    path: Assets/Scenes/Transition.unity
+    guid: f894c2461c097ab488179a78f44d7bfb
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9910688337e435d43917467f485ce2eb,
       type: 2}

@@ -1,25 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Fire : MonoBehaviour
 {
     public List<GameObject> ensemble;
     private List<Transform> particules = new();
-
     public BlackFade blackfade;
+    private bool FireStart = false;
+    public float timeRemaining = 5;
 
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
+            FireStart = true;
             StartCoroutine(blackfade.StartChange());
 
             InvokeRepeating("Burning", 2f, 2f);  //1s delay, repeat every 1s
         }
+
+        if(FireStart == true)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+            }
+            else
+            {
+                StartCoroutine(blackfade.FadeBlackOut());
+                Transition.CrossTitle = "Feux de fôret dans le monde";
+                Transition.CrossParagraphe = "Chaque année, c'est plus de 350 millions d'hectares, l'équivalent de 6 fois la superficie de la France, qui sont partis en fumée dans le monde entrainant avec eux la vie de beaucoup d'animaux. Rien qu'en Australie, en 2023, ce sont près de 3 milliards d'animaux morts brûlés ou asphyxiés par les flammes.\nL'activité humaine est à l'origine de 90% des incendies de fôret et le nombre de ceux-ci ne cessent d'augmenter.";
+                Transition.CrossSources = "FAO, Greenly, WWF";
+                Transition.CrossScene = "Forest";
+                StartCoroutine(LoadYourAsyncScene());
+            }
+        }
+
     }
 
+    IEnumerator LoadYourAsyncScene()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Transition");
 
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
 
     private void Burning()
     {
@@ -50,5 +80,6 @@ public class Fire : MonoBehaviour
         child.gameObject.SetActive(false);
 
     }
+
 
 }

@@ -75,7 +75,7 @@ public class BlackFade : MonoBehaviour
 
     public IEnumerator StartChange()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(10);
         StartCoroutine(FadeBlackOut());
         StartCoroutine(ChangeScene());
         StartCoroutine(EndChange());
