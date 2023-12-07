@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.XR.CoreUtils;
+using UnityEngine.SceneManagement;
 
 public class playerHealth : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class playerHealth : MonoBehaviour
     public TMP_Text healthText;
     public AudioSource lowHealth;
     public float decreaseSpeed;
+    public GameObject eatObject;
+    public GameObject teleportObject;
 
     [SerializeField]
     private readonly DeleteScript deleteScript;
@@ -39,6 +42,11 @@ public class playerHealth : MonoBehaviour
         {
             healthText.color = Color.white;
             StopLowHealthSound();
+        }
+
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene("End Scene");
         }
     }
 

@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Home.unity
+    guid: 7acaa0e2c0c14894a9f012428b5407e3
+  - enabled: 1
     path: Assets/Scenes/Ocean.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: ad9dd29711eeba94bbcd4b41e43782e7
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 2b4c83e737183f546beba50f4b52bc89,
       type: 2}
