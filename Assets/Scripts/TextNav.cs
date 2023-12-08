@@ -13,6 +13,8 @@ public class TextNav : MonoBehaviour
     private int currentIndex = 0;
     public InputActionReference changeRef;
     public InputActionReference restartRef;
+    private bool allowTrigger = true;
+    private bool allowRestart = true;
 
     void Start()
     {
@@ -23,13 +25,19 @@ public class TextNav : MonoBehaviour
     {
         if (changeRef.action.triggered)
         {
-            currentIndex = (currentIndex + 1) % texts.Length;
-            UpdateTexts();
+            if (allowTrigger) {
+                currentIndex = (currentIndex + 1) % texts.Length;
+                UpdateTexts();
+            }
+            
         }
 
         if (restartRef.action.triggered)
         {
-            StartCoroutine(Countdown());
+            if (allowRestart)
+            {
+                StartCoroutine(Countdown());
+            }
         }
     }
 
@@ -53,6 +61,9 @@ public class TextNav : MonoBehaviour
     IEnumerator Countdown()
     {
         countdownSound.Play();
+        instructionText.text = "";
+        allowTrigger = false;
+        allowRestart = false;
 
         for (int i = 3; i > 0; i--)
         {
