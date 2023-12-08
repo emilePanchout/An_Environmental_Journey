@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class RestartHandler : MonoBehaviour
 {
     private static RestartHandler instance;
+    public InputActionReference startRef;
 
     private void Awake()
     {
@@ -19,7 +21,8 @@ public class RestartHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) {
+        if (startRef.action.triggered) {
+            playerHealth.currentHealth = 100;
             SceneManager.LoadScene("Ocean");
         }
     }

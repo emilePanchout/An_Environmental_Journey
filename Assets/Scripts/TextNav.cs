@@ -12,6 +12,7 @@ public class TextNav : MonoBehaviour
     public string[] texts;
     private int currentIndex = 0;
     public InputActionReference changeRef;
+    public InputActionReference restartRef;
 
     void Start()
     {
@@ -26,7 +27,7 @@ public class TextNav : MonoBehaviour
             UpdateTexts();
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (restartRef.action.triggered)
         {
             StartCoroutine(Countdown());
         }

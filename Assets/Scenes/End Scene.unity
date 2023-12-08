@@ -2245,8 +2245,10 @@ MonoBehaviour:
     du plastique, mettre en place des r\xE9gulations strictes pour contr\xF4ler les
     d\xE9versements, et encourager la p\xEAche durable et la protection des zones
     marines."
-  - Press 'R' to restart the game
+  - Press 'Menu (right)' to restart the game
   changeRef: {fileID: -5568202526806135904, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  restartRef: {fileID: -174666335790569820, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
 --- !u!114 &1808069845
 MonoBehaviour:
@@ -2395,50 +2397,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1949979049
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1949979051}
-  - component: {fileID: 1949979050}
-  m_Layer: 0
-  m_Name: RestartManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1949979050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949979049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2438562f1f81a246939b9b6df4f9c41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1949979051
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949979049}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.479504, y: 8.510483, z: 3.1610594}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2447,7 +2405,6 @@ SceneRoots:
   - {fileID: 1797944158}
   - {fileID: 1393532631}
   - {fileID: 1642921525}
-  - {fileID: 1949979051}
   - {fileID: 1808069842}
   - {fileID: 745460360}
   - {fileID: 1925069324}
