@@ -8,6 +8,7 @@ public class TextNav : MonoBehaviour
 {
     public TextMeshProUGUI infoText;
     public TextMeshProUGUI instructionText;
+    public AudioSource countdownSound;
     public string[] texts;
     private int currentIndex = 0;
     public InputActionReference changeRef;
@@ -50,6 +51,8 @@ public class TextNav : MonoBehaviour
 
     IEnumerator Countdown()
     {
+        countdownSound.Play();
+
         for (int i = 3; i > 0; i--)
         {
             infoText.text = i.ToString();
