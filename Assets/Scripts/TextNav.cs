@@ -53,7 +53,7 @@ public class TextNav : MonoBehaviour
         {
             instructionText.text = "";
         }
-        else instructionText.text = "Press 'Trigger (left)'";
+        else instructionText.text = "Press 'Trigger (right)'";
     }
 
     void DisplayGameOverText()
