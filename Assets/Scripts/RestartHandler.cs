@@ -1,3 +1,5 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -5,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class RestartHandler : MonoBehaviour
 {
     private static RestartHandler instance;
+    public TextMeshProUGUI infoText;
+    public AudioSource countdownSound;
     public InputActionReference startRef;
 
     private void Awake()
@@ -22,9 +26,29 @@ public class RestartHandler : MonoBehaviour
     private void Update()
     {
         if (startRef.action.triggered) {
-            playerHealth.currentHealth = 100;
-            SceneManager.LoadScene("Ocean");
+            if (TextNav.allowRestart)
+            {
+                if ((SceneManager.GetActiveScene().name).Equals("Home")){
+                    StartCoroutine(Countdown());
+                }
+            }
         }
     }
+
+    IEnumerator Countdown()
+    {
+        countdownSound.Play();
+        TextNav.allowRestart = false;
+
+        for (int i = 3; i > 0; i--)
+        {
+            infoText.text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+
+        playerHealth.currentHealth = 100;
+        SceneManager.LoadScene("Ocean");
+    }
+
 
 }

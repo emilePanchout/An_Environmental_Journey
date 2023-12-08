@@ -14,10 +14,11 @@ public class TextNav : MonoBehaviour
     public InputActionReference changeRef;
     public InputActionReference restartRef;
     private bool allowTrigger = true;
-    private bool allowRestart = true;
+    public static bool allowRestart = true;
 
     void Start()
     {
+        allowRestart = true;
         DisplayGameOverText();
     }
 
@@ -36,7 +37,10 @@ public class TextNav : MonoBehaviour
         {
             if (allowRestart)
             {
-                StartCoroutine(Countdown());
+                if ((SceneManager.GetActiveScene().name).Equals("End Scene"))
+                {
+                    StartCoroutine(Countdown());
+                }
             }
         }
     }

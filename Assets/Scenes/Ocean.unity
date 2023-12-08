@@ -1393,8 +1393,8 @@ MonoBehaviour:
   - {fileID: 2268731103244944113, guid: f8dd8f367c150a44e81058510777d193, type: 3}
   - {fileID: 2849884698805746993, guid: 0000887612ab53c4585b18540433e333, type: 3}
   - {fileID: 1931256913244392093, guid: 4d41df95b806f7a43981ef283d349f9e, type: 3}
-  minObjects: 2000
-  maxObjects: 3000
+  minObjects: 1000
+  maxObjects: 1500
   minHeight: 0
   maxHeight: 15
   spawnRadius: 15
@@ -1563,6 +1563,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (XR Rig)
       objectReference: {fileID: 0}
+    - target: {fileID: 1867457073128929348, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6037961023037459535, guid: 5d791e542fd50c44a972eecd0b8b98ac,
         type: 3}
       propertyPath: pH
@@ -1581,7 +1586,17 @@ PrefabInstance:
     - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
         type: 3}
       propertyPath: m_LineWidth
-      value: 0.002
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_SetLineColorGradient
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_SnapEndpointIfAvailable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
         type: 3}
@@ -1595,13 +1610,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
         type: 3}
+      propertyPath: m_InvalidColorGradient.ctime1
+      value: 65342
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
       propertyPath: m_InvalidColorGradient.key0.a
       value: 0.54901963
       objectReference: {fileID: 0}
     - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
         type: 3}
+      propertyPath: m_InvalidColorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
       propertyPath: m_InvalidColorGradient.key1.a
       value: 0.54901963
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_InvalidColorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
+        type: 3}
+      propertyPath: m_OverrideInteractorLineLength
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8459320524864689894, guid: 5d791e542fd50c44a972eecd0b8b98ac,
         type: 3}
