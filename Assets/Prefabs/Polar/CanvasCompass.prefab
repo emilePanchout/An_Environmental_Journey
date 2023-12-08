@@ -115,6 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd1e3ca8de6c494abf9e3e069a4575c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeIn: 0
+  UI: {fileID: 0}
   player: {fileID: 0}
   compass: {fileID: 7836517661200945863}
 --- !u!1 &2947356498187757092
