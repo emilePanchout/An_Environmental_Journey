@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press 'Trigger (left)'
+  m_text: Press 'Trigger (right)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2246,8 +2246,7 @@ MonoBehaviour:
     d\xE9versements, et encourager la p\xEAche durable et la protection des zones
     marines."
   - Press 'Menu (right)' to restart the game
-  changeRef: {fileID: -5568202526806135904, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
+  changeRef: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   restartRef: {fileID: -174666335790569820, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
 --- !u!114 &1808069845

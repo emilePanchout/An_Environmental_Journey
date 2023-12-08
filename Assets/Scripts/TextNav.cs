@@ -46,7 +46,7 @@ public class TextNav : MonoBehaviour
 
     void DisplayGameOverText()
     {
-        infoText.text = "Votre vie aquatique virtuelle s'est éteinte en rasion de la pollution plastique. " +
+        infoText.text = "Votre vie aquatique virtuelle s'est éteinte en raison de la pollution plastique. " +
                 "La réalité est tout aussi grave. Agissons ensemble pour préserver nos océans et protéger la diversité marine!";
     }
 
@@ -60,6 +60,7 @@ public class TextNav : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
+        playerHealth.currentHealth = 100;
         SceneManager.LoadScene("Ocean");
     }
 }
