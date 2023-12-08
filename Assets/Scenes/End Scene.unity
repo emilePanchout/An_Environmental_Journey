@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 187569298}
   - component: {fileID: 187569297}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: InfoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1644,7 +1644,7 @@ GameObject:
   - component: {fileID: 1529476065}
   - component: {fileID: 1529476064}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: InstructionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1689,7 +1689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press 'R' to restart
+  m_text: Press 'Trigger (left)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2104,6 +2104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoText: {fileID: 187569297}
+  instructionText: {fileID: 1529476064}
   texts:
   - "Les oc\xE9ans souffrent de la pollution principalement due aux d\xE9chets plastiques,
     aux d\xE9versement toxiques industriels et agricoles, ainsi qu'\xE0 la surp\xEAche
@@ -2115,6 +2116,7 @@ MonoBehaviour:
     du plastique, mettre en place des r\xE9gulations strictes pour contr\xF4ler les
     d\xE9versements, et encourager la p\xEAche durable et la protection des zones
     marines."
+  - Press 'R' to restart the game
   changeRef: {fileID: -5568202526806135904, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
 --- !u!114 &1808069845

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TextNav : MonoBehaviour
 {
     public TextMeshProUGUI infoText;
+    public TextMeshProUGUI instructionText;
     public string[] texts;
     private int currentIndex = 0;
     public InputActionReference changeRef;
@@ -20,13 +21,19 @@ public class TextNav : MonoBehaviour
         if (changeRef.action.triggered)
         {
             currentIndex = (currentIndex + 1) % texts.Length;
-            UpdateText();
+            UpdateTexts();
         }
     }
 
-    void UpdateText()
+    void UpdateTexts()
     {
         infoText.text = texts[currentIndex];
+
+        if (currentIndex == 3)
+        {
+            instructionText.text = "";
+        }
+        else instructionText.text = "Press 'Trigger (left)'";
     }
 
     void DisplayGameOverText()
