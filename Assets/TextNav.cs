@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class TextNav : MonoBehaviour
@@ -7,23 +8,30 @@ public class TextNav : MonoBehaviour
     public TextMeshProUGUI infoText;
     public string[] texts;
     private int currentIndex = 0;
+    public InputActionReference changeRef;
 
-    public void ShowNextText()
+    void Start()
     {
-        currentIndex = (currentIndex + 1) % texts.Length;
-        UpdateText();
-    }
-    public void ShowPreviousText()
-    {
-        currentIndex = (currentIndex - 1 + texts.Length) % texts.Length;
-        UpdateText();
+        DisplayGameOverText();
     }
 
-    private void UpdateText()
+    private void Update()
     {
-        if (currentIndex >= 0 && currentIndex < texts.Length)
+        if (changeRef.action.triggered)
         {
-            infoText.text = texts[currentIndex];
+            currentIndex = (currentIndex + 1) % texts.Length;
+            UpdateText();
         }
+    }
+
+    void UpdateText()
+    {
+        infoText.text = texts[currentIndex];
+    }
+
+    void DisplayGameOverText()
+    {
+        infoText.text = "Votre vie aquatique virtuelle s'est éteinte en rasion de la pollution plastique. " +
+                "La réalité est tout aussi grave. Agissons ensemble pour préserver nos océans et protéger la diversité marine!";
     }
 }

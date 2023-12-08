@@ -100,11 +100,11 @@ public class playerHealth : MonoBehaviour
     public void UpdateHealthText()
     {
         healthText.text = "Santé: " + currentHealth;
-        if (currentHealth == 0)
-        {
-            healthText.text = "Votre vie aquatique virtuelle s'est éteinte en rasion de la pollution plastique. " +
-                "La réalité est tout aussi grave. Agissons ensemble pour préserver nos océans et protéger la diversité marine!";
-        }
+        //if (currentHealth == 0)
+        //{
+        //    healthText.text = "Votre vie aquatique virtuelle s'est éteinte en rasion de la pollution plastique. " +
+        //        "La réalité est tout aussi grave. Agissons ensemble pour préserver nos océans et protéger la diversité marine!";
+        //}
     }
 
     void PlayLowHealthSound()
