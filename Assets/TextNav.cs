@@ -1,7 +1,8 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TextNav : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class TextNav : MonoBehaviour
             currentIndex = (currentIndex + 1) % texts.Length;
             UpdateTexts();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartCoroutine(Countdown());
+        }
     }
 
     void UpdateTexts()
@@ -40,5 +46,16 @@ public class TextNav : MonoBehaviour
     {
         infoText.text = "Votre vie aquatique virtuelle s'est éteinte en rasion de la pollution plastique. " +
                 "La réalité est tout aussi grave. Agissons ensemble pour préserver nos océans et protéger la diversité marine!";
+    }
+
+    IEnumerator Countdown()
+    {
+        for (int i = 3; i > 0; i--)
+        {
+            infoText.text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+
+        SceneManager.LoadScene("Ocean");
     }
 }
