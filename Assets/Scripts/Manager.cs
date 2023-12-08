@@ -9,7 +9,6 @@ public class Manager : MonoBehaviour
     public InputActionReference mapInput;
     public GameObject mapCanvas;
 
-
     void Start()
     {
         mapInput.action.performed += ShowMap;
