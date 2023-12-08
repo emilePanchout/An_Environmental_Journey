@@ -69,7 +69,6 @@ public class TeleportationManager : MonoBehaviour
 
         if (teleportRay.TryGetCurrent3DRaycastHit(out hit))//&& hit.transform.gameObject.layer == LayerMask.NameToLayer("Teleport"))
         {
-
             var interactable = hit.collider.GetComponentInParent<BaseTeleportationInteractable>();
             var t = interactable.GetAttachTransform(teleportRay);
 
