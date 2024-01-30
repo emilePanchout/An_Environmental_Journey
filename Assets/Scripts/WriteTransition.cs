@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class WriteTransition : MonoBehaviour
 {
+    public TextMeshProUGUI score;
     public TextMeshProUGUI title;
     public TextMeshProUGUI paragraphe;
     public TextMeshProUGUI sources;
@@ -13,6 +14,7 @@ public class WriteTransition : MonoBehaviour
 
     void Start()
     {
+        title.text = Transition.CrossScore;
         title.text = Transition.CrossTitle;
         paragraphe.text = Transition.CrossParagraphe;
         sources.text = Transition.CrossSources;

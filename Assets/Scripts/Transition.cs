@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Transition : MonoBehaviour
 {
+    public static string CrossScore;
     public static string CrossTitle;
     public static string CrossParagraphe;
     public static string CrossSources;

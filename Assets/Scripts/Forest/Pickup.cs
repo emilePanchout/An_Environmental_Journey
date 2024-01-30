@@ -14,7 +14,7 @@ public class Pickup : MonoBehaviour
 
     public GameObject tutorial;
 
-    private int i = 1;
+    public int i = 1;
 
     //private void Update()
     //{

@@ -8,6 +8,7 @@ public class Fire : MonoBehaviour
     public List<GameObject> ensemble;
     private List<Transform> particules = new();
     public BlackFade blackfade;
+    public Pickup pickup;
     private float timeRemaining = 120;
 
     public void Update()
@@ -29,6 +30,7 @@ public class Fire : MonoBehaviour
             else
             {
                 StartCoroutine(blackfade.FadeBlackOut());
+                Transition.CrossScore = "Score : " + pickup.i.ToString();
                 Transition.CrossTitle = "Feux de forêt dans le monde";
                 Transition.CrossParagraphe = "Chaque année, c'est plus de 350 millions d'hectares, l'équivalent de 6 fois la superficie de la France, qui sont partis en fumée dans le monde entrainant avec eux la vie de beaucoup d'animaux. Rien qu'en Australie, en 2023, ce sont près de 3 milliards d'animaux morts brûlés ou asphyxiés par les flammes.\nL'activité humaine est à l'origine de 90% des incendies de forêt et le nombre de ceux-ci ne cessent d'augmenter.";
                 Transition.CrossSources = "FAO, Greenly, WWF";
