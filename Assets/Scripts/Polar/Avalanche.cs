@@ -8,6 +8,9 @@ public class Avalanche : MonoBehaviour
     public List<GameObject> avalanchePrefabs;
     public List<Transform> avalancheSpawners;
 
+    public AudioClip wind;
+    public bool hasEnteredZone = false;
+
     private void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -21,7 +24,19 @@ public class Avalanche : MonoBehaviour
                 rock.gameObject.transform.localScale = new Vector3(k, k, k);
                 Destroy(rock, 10);
             }
-            
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && !hasEnteredZone)
+        {
+            AudioSource newAudio = other.GetComponent<AudioSource>();
+            newAudio.clip = wind;
+            newAudio.Play();
+
+            hasEnteredZone = true;
+
         }
     }
 }

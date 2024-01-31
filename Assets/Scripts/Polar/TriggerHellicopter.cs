@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,12 +15,17 @@ public class TriggerHellicopter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("MamaBearCollider"))
         {
+            Console.WriteLine(other.name);
             // Jouer les sons bateaux plus crack
+            boat.GetComponent<AudioSource>().Play();
+            bloc1.GetComponent<AudioSource>().Play();
 
             driftingIsActive = true;
         }
+            
+  
             
     }
 

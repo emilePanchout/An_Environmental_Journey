@@ -8,6 +8,7 @@ TagManager:
   - Bear
   - ParticleCollider
   - MamaBearCollider
+  - Water
   layers:
   - Default
   - TransparentFX
