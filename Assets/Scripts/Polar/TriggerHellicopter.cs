@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class TriggerHellicopter : MonoBehaviour
 {
-    public GameObject MamaBearBloc;
+    public GameObject oldMamaBear;
+    public GameObject newMamaBear;
+    public GameObject bloc1;
+
     public GameObject boat;
 
     public bool driftingIsActive = false;
@@ -15,18 +18,23 @@ public class TriggerHellicopter : MonoBehaviour
         {
             // Jouer les sons bateaux plus crack
 
-            boat.SetActive(true);
-
             driftingIsActive = true;
         }
             
     }
 
+
     public void Update()
     {
         if(driftingIsActive)
         {
-            MamaBearBloc.transform.position = new Vector3(MamaBearBloc.transform.position.x, MamaBearBloc.transform.position.y, MamaBearBloc.transform.position.z + 0.25f);
+            newMamaBear.transform.position = new Vector3(newMamaBear.transform.position.x, newMamaBear.transform.position.y, newMamaBear.transform.position.z + 0.25f);
+            bloc1.transform.position = new Vector3(bloc1.transform.position.x + 0.25f, bloc1.transform.position.y, bloc1.transform.position.z + 0.25f);
+
+            boat.SetActive(true);
+
+            oldMamaBear.SetActive(false);
+            newMamaBear.SetActive(true);
         }
         
     }
