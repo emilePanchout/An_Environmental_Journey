@@ -18946,6 +18946,8 @@ MonoBehaviour:
   bloc1: {fileID: 32137783}
   boat: {fileID: 998985666}
   fadeSphere: {fileID: 1659113318}
+  materialRender: {fileID: 0}
+  isFading: 0
   driftingIsActive: 0
 --- !u!4 &571983886 stripped
 Transform:
@@ -45474,7 +45476,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -99134,7 +99136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1659113319
 Transform:
   m_ObjectHideFlags: 0
