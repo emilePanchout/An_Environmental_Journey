@@ -8,6 +8,7 @@ public class TriggerMamaBear : MonoBehaviour
     public GameObject babyBear;
     public GameObject arrow;
     public GameObject hellicoArrow;
+    public AudioSource mamaSound;
     public bool isTriggered = false;
 
     private void OnTriggerEnter(Collider other)
@@ -17,6 +18,7 @@ public class TriggerMamaBear : MonoBehaviour
         {
             isTriggered = true;
             catchManager.playerHasBear = false;
+            mamaSound.Play();
 
             catchManager.bearSlot.SetActive(false);
             babyBear.SetActive(true);
