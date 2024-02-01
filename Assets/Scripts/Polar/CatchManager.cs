@@ -14,6 +14,8 @@ public class CatchManager : MonoBehaviour
     public InputActionReference select;
     public GameObject bearSlot;
 
+    public GameObject GuideText;
+
 
     // Update is called once per frame
     void Start()
@@ -39,6 +41,7 @@ public class CatchManager : MonoBehaviour
             other.transform.SetParent(bearSlot.transform, false);
             playerHasBear = true;
             leftHand.SetActive(false);
+            GuideText.SetActive(false);
         }
     }
 
