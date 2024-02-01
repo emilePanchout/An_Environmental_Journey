@@ -50049,7 +50049,7 @@ PrefabInstance:
     - target: {fileID: 5291675252881038735, guid: fbad766fc2e58c44cb79cdfe3dac7043,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -112868,7 +112868,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.511
       inSlope: 0
       outSlope: 0
       tangentMode: 0
