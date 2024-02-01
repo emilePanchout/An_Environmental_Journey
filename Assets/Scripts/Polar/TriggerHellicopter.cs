@@ -11,6 +11,8 @@ public class TriggerHellicopter : MonoBehaviour
 
     public GameObject boat;
     public GameObject fadeSphere;
+    public Renderer renderer;
+    private Color lerpedColor;
 
     public bool driftingIsActive = false;
 
@@ -51,6 +53,8 @@ public class TriggerHellicopter : MonoBehaviour
     void Fade()
     {
         fadeSphere.SetActive(true);
+        lerpedColor = Color.Lerp(Color.clear, Color.black, Mathf.PingPong(Time.time, 5));
+        renderer.material.color = lerpedColor;
     }
 
     IEnumerator Countdown(int seconds)
