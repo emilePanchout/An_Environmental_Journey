@@ -10,6 +10,7 @@ public class TriggerHellicopter : MonoBehaviour
     public GameObject bloc1;
 
     public GameObject boat;
+    public GameObject fadeSphere;
 
     public bool driftingIsActive = false;
 
@@ -23,6 +24,7 @@ public class TriggerHellicopter : MonoBehaviour
             bloc1.GetComponent<AudioSource>().Play();
 
             driftingIsActive = true;
+            StartCoroutine(Countdown(5));
         }
             
   
@@ -43,5 +45,22 @@ public class TriggerHellicopter : MonoBehaviour
             newMamaBear.SetActive(true);
         }
         
+    }
+
+
+    void Fade()
+    {
+        fadeSphere.SetActive(true);
+    }
+
+    IEnumerator Countdown(int seconds)
+    {
+        int counter = seconds;
+        while (counter > 0)
+        {
+            yield return new WaitForSeconds(1);
+            counter--;
+        }
+        Fade();
     }
 }
