@@ -9,9 +9,15 @@ public class TriggerHellicopter : MonoBehaviour
     public GameObject newMamaBear;
     public GameObject bloc1;
 
+
+    public GameObject player;
+    public GameObject startText;
+    public GameObject endText;
+
     public GameObject boat;
     public GameObject fadeSphere;
     public Renderer materialRender;
+    public Transform endPos;
 
     public bool isFading;
 
@@ -27,7 +33,7 @@ public class TriggerHellicopter : MonoBehaviour
             bloc1.GetComponent<AudioSource>().Play();
 
             driftingIsActive = true;
-            StartCoroutine(Countdown(5));
+            StartCoroutine(Countdown(15));
         }
             
   
@@ -46,12 +52,24 @@ public class TriggerHellicopter : MonoBehaviour
 
             oldMamaBear.SetActive(false);
             newMamaBear.SetActive(true);
+            Debug.Log("alpha :  " + materialRender.material.color.a);
 
-
-            if(isFading && materialRender.material.color.a < 1)
+            if (isFading)
             {
-                Console.Write("alpha :  ", materialRender.material.color.a);
-                materialRender.material.color = new Color(materialRender.material.color.r, materialRender.material.color.g, materialRender.material.color.b, materialRender.material.color.a + 0.05f);
+
+                Color color = materialRender.material.color;
+                color.a += 0.005f;
+                materialRender.material.color = color;
+
+                if(materialRender.material.color.a > 1)
+                {
+                    player.transform.position = endPos.position;
+                    player.transform.rotation = endPos.rotation;
+                    startText.SetActive(false);
+                    endText.SetActive(true);
+                    fadeSphere.SetActive(false);
+
+                }
             }
         }
         
@@ -67,6 +85,7 @@ public class TriggerHellicopter : MonoBehaviour
         }
         
         isFading = true;
+        fadeSphere.SetActive(true);
 
 
     }
