@@ -47,9 +47,11 @@ public class TriggerHellicopter : MonoBehaviour
             oldMamaBear.SetActive(false);
             newMamaBear.SetActive(true);
 
-            if(isFading && materialRender.material.color.a <1)
+
+            if(isFading && materialRender.material.color.a < 1)
             {
-                materialRender.material.color = new Color(materialRender.material.color.r, materialRender.material.color.g, materialRender.material.color.b, materialRender.material.color.a + 0.005f);
+                Console.Write("alpha :  ", materialRender.material.color.a);
+                materialRender.material.color = new Color(materialRender.material.color.r, materialRender.material.color.g, materialRender.material.color.b, materialRender.material.color.a + 0.05f);
             }
         }
         
@@ -65,6 +67,7 @@ public class TriggerHellicopter : MonoBehaviour
         }
         
         isFading = true;
+
 
     }
 }
