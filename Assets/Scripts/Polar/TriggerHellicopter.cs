@@ -11,8 +11,9 @@ public class TriggerHellicopter : MonoBehaviour
 
     public GameObject boat;
     public GameObject fadeSphere;
-    public Renderer renderer;
-    private Color lerpedColor;
+    public Renderer materialRender;
+
+    public bool isFading;
 
     public bool driftingIsActive = false;
 
@@ -45,16 +46,13 @@ public class TriggerHellicopter : MonoBehaviour
 
             oldMamaBear.SetActive(false);
             newMamaBear.SetActive(true);
+
+            if(isFading && materialRender.material.color.a <1)
+            {
+                materialRender.material.color = new Color(materialRender.material.color.r, materialRender.material.color.g, materialRender.material.color.b, materialRender.material.color.a + 0.005f);
+            }
         }
         
-    }
-
-
-    void Fade()
-    {
-        fadeSphere.SetActive(true);
-        lerpedColor = Color.Lerp(Color.clear, Color.black, Mathf.PingPong(Time.time, 5));
-        renderer.material.color = lerpedColor;
     }
 
     IEnumerator Countdown(int seconds)
@@ -65,6 +63,8 @@ public class TriggerHellicopter : MonoBehaviour
             yield return new WaitForSeconds(1);
             counter--;
         }
-        Fade();
+        
+        isFading = true;
+
     }
 }
